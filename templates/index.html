@@ -1,0 +1,95 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basic Security for Dummies</title>
+  <link rel="stylesheet" type="text/css" href="/static/index.css">
+  <script type="text/javascript" src="/static/main.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset='utf-8'>
+</head>
+
+<body class="main-grid-container" onload='updateProgress()'>
+  <div class="main-header-content">
+    <div class="text main-title-text">Basic Security for Dummies.</div>
+  </div>
+  <div class='sidebar'>
+    <div class="text" style="font-size:30px;color:white;">About</div>
+    <div class="text" style="font-size:15px;color:white;">
+        <div>My name is Brandon Green</div>
+        <div>I'm a budding software engineer looking to teach the masses about security concepts and give people some brain food for thought.</div>
+        <br>
+        <div>Hopefully you learn something new!</div>
+    </div>
+  </div>
+  <div class='main-content'>
+      <div class="main-content-box">
+        <div class='text main-content-title' size>Module 1:</div>
+        <div class='text main-content-title-desc'>Perceptions about Security</div>
+        <div class='text main-content-desc'>
+            <div>In this module, your uneducated normal self will begin to learn about the wonders that is security and the security world!</div>
+            <div>Some of these cool things to learn about include:</div>
+            <ul>
+                <li>Perception vs Reality of security!</li>
+                <li>Mindsets of both an attacker and defender</li>
+            </ul>
+            <br>
+            <div>So... let's get started! Press the button below to begin.</div>
+        </div>
+        <br>
+        <div class='text main-content-button' onclick='openMod1()'>Begin</div>
+        <br>
+        <br>
+        <div class="text">Progress:</div>
+        <progress class="main-content-progress"></progress>
+      </div>
+      <div class="main-content-box">
+        <div class='text main-content-title' size>Module 2:</div>
+        <div class='text main-content-title-desc'>Human Weaknesses & Risks</div>
+        <div class='text main-content-desc'>
+            <div>Here we'll learn about the reasons why people compromise security and how to analyse risks.</div>
+            <div>Some of these cool things to learn about include:</div>
+            <ul>
+                <li>Corruption in security</li>
+                <li>How to properly assess risks</li>
+            </ul>
+            <br>
+            <br>
+            <div>So... let's get started! Press the button below to begin.</div>
+        </div>
+        <br>
+        <div class='text main-content-button' onclick='openMod2()'>Begin</div>
+        <br>
+        <br>
+        <div class="text">Progress:</div>
+        <progress class="main-content-progress"></progress>
+      </div>
+      <div class="main-content-box">
+        <div class='text main-content-title' size>Module 3:</div>
+        <div class='text main-content-title-desc'>Privacy & Communication</div>
+        <div class='text main-content-desc'>
+            <div>In this module, your uneducated normal self will begin to learn about the wonders that is security and the security world!</div>
+            <div>Some of these cool things to learn about include:</div>
+            <ul>
+                <li>Perception vs Reality of security!</li>
+                <li>Mindsets of both an attacker and defender</li>
+            </ul>
+            <br>
+            <div>So... let's get started! Press the button below to begin.</div>
+        </div>
+        <br>
+        <div class='text main-content-button' onclick='openMod3()'>Begin</div>
+        <br>
+        <br>
+        <div class="text">Progress:</div>
+        <progress class="main-content-progress"></progress>
+      </div>
+  </div>
+  <div class="main-footer">
+      <div class="text" style="font-size: 30px; color:white;">Total Progress:</div>
+      <progress id="total-progress" style="height:40px;width:100%;"></progress>
+  </div>
+</body>
+</html>

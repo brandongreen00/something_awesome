@@ -1,0 +1,113 @@
+html, body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    margin: 0;
+    }
+
+/* OVERALL GRID */
+.main-grid-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    box-sizing: border-box;
+    background-color: black;
+    
+    grid-template-columns: [sidebar] 1fr [main] 6fr;
+    grid-template-rows: [header] 1fr [body] 7fr [footer] 1fr;
+    grid-template-areas:
+      "header-bar header-bar header-bar"
+      "sidebar main-content main-content"
+      "sidebar footer footer"
+  }
+
+.main-header-content {
+    border-radius: 10px;
+    background-color: #003b88;
+    justify-content: center;
+    align-content: center;
+    grid-area: header-bar;
+}
+
+.main-title-text {
+    color: white;
+    font-size: 70px;
+}
+
+.text {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.sidebar {
+    border-radius: 10px;
+    background-color: #3f3f3f;
+    grid-area: sidebar;
+}
+
+/* MAIN CONTENT */
+.main-content {
+    border-radius: 10px;
+    display: grid;
+    grid-area: main-content;
+
+    grid-template-columns: [part1] 1fr [part2] 1fr [part3] 1fr;
+    grid-template-rows: [stuff] 1fr;
+}
+
+.main-content-box {
+    box-sizing: border-box;
+    border: 1px solid #2f2f2f;
+    border-radius: 10px;
+    align-items: center;
+    background-color: #7f7f7f;
+}
+
+.main-content-title {
+    position: relative;
+    color: white;
+    font-size: 40px;
+}
+.main-content-title-desc {
+    position: relative;
+    color: white;
+    font-size: 25px;
+}
+
+.main-content-desc {
+    position: relative;
+    color: white;
+    padding: 0px;
+    background-color: #9f9f9f;
+    font-size: 20px;
+}
+
+.main-content-button {
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    box-sizing: border-box;
+    align-content: center;
+    justify-content: center;
+    border: 2px solid white;
+    font-size: 30px;
+    color: white;
+    border-radius: 10px;
+    align-self: center;
+    background-color:#06c506;
+}
+
+.main-content-progress {
+    position: relative;
+    display: flex;
+    width: 100%;
+    color: grey;
+}
+
+/* FOOTER CONTENT */
+.main-footer {
+    background-color: #003b88;
+    border-radius: 10px;
+    grid-area: footer;
+}
+
