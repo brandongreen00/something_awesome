@@ -23,9 +23,7 @@ function updateProgress() {
 }
 
 function openMod1() {
-    text = "http://localhost:" + BACKEND_PORT + "/mod1"
-    alert(text)
-    window.location = text;
+    window.location = "http://localhost:" + BACKEND_PORT + "/mod1"; 
 }
 
 function openMod2() {
@@ -34,5 +32,43 @@ function openMod2() {
 
 function openMod3() {
     window.location = "http://localhost:" + BACKEND_PORT + "/mod3"
+    
+}
+
+function prepMod() {
+    url = window.location.toString()
+    mod = ""
+    for (i = url.length - 4; i < url.length; i++) {
+        mod += url.charAt(i);
+    }
+    modRef = document.getElementsByClassName(mod + "-page")
+    for (i = 1; i < modRef.length; i++) {
+        modRef[i].style.display = "none";
+    }
+    sidebarContentElement = document.getElementById("1");
+    sidebarContentElement.style.color = "lime";
+    sidebarContentElement.style['font-weight'] = "bold";
+}
+
+function nextPage() {
+    url = window.location.toString()
+    mod = ""
+    for (i = url.length - 4; i < url.length; i++) {
+        mod += url.charAt(i);
+    }
+    modRef = document.getElementsByClassName(mod + "-page")
+    for (i = 0; i < modRef.length; i++) {
+        if (modRef[i].style.display != "none") {
+            modRef[i].style.display = "none";
+            modRef[i+1].style.display = "block";
+            before = document.getElementById((i+1).toString());
+            before.style.color = "white";
+            before.style['font-weight'] = "normal";
+            after = document.getElementById((i+2).toString());
+            after.style.color = "lime";
+            after.style['font-weight'] = "bold";
+            break
+        }
+    }
     
 }
