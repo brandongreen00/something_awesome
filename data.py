@@ -2,13 +2,13 @@ progress = {
     'info': [
         {'completed': False,
         'pageNum': 0,
-        'pageEnd': 5},
+        'pageEnd': 7},
         {'completed': False,
         'pageNum': 0,
-        'pageEnd': 5},
+        'pageEnd': 7},
         {'completed': False,
         'pageNum': 0,
-        'pageEnd': 5}
+        'pageEnd': 7}
     ]    
 }
 
@@ -36,9 +36,9 @@ def get():
     global progress
     return progress
 
-def put(element, data):
+def put(data):
     global progress
-    progress[element] = data
+    progress = data
     return progress
 
 def get_ad():

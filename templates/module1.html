@@ -47,7 +47,11 @@
             <div class='text main-content-title'>Perceptions vs Reality</div>
             <div class='text main-content-title-desc'>How much do I know about security from everyday knowledge? How wrong are the movies?</div>
             <div class='text main-content-desc'>
-                <div></div>
+                <div>
+                    <br>
+                    <div>Yas QUEEN</div>
+                    <br>
+                </div>
             </div>
             <br>
             <div class='text main-content-button' onclick='nextPage()'>Next</div>
@@ -79,28 +83,52 @@
             <br>
           </div>
         <!--PAGE 5-->
-        <div class="main-content-box mod1-page">
-            <div class='text main-content-title'>Breaking into the castle - Attacker</div>
-            <div class='text main-content-title-desc'></div>
-            <div class='text main-content-desc'>
-                <div></div>
+        <div class="main-content-box mod1-page game-info">
+            <div class='text main-content-title game-title'>Breaking into the castle - Attacker</div>
+            <div class='text main-content-desc game-side-info'>
+                <div class="text">Press the button corresponding to which wall you want to attack!</div>
+                <div class="text">You want to attack the weakest wall.</div>
+                <br>
+                <div class="text">Wall status (amount of bricks):</div>
+                <ul>
+                    <li class="text wall-status" id="north">North: </li>
+                    <li class="text wall-status" id="east">East: </li>
+                    <li class="text wall-status" id="south">South: </li>
+                    <li class="text wall-status" id="west">West: </li>
+                </ul>
+                <div class="text main-content-button" onclick="start_attack()">Begin!</div>
+                <div class="text" id="time-taken">Time Taken: 0 s</div>
             </div>
-            <br>
-            <div class='text main-content-button' onclick='nextPage()'>Next</div>
-            <br>
-            <br>
+            <div class="game">
+                <div class="inside-box" id="Box2">
+                    <div class="inside-box" id="Box1">
+                        <div class="inside-box" style="background-color:yellow;" id="Box0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=game-next>
+                <div class="text main-content-button ad-attack-button" style="width:20%;height:50%;background-color:#003b88;display:none;" onclick="attack_north()">North</div>
+                <div class="text main-content-button ad-attack-button" style="width:20%;height:50%;background-color:#003b88;display:none;" onclick="attack_east()">East</div>
+                <div class="text main-content-button ad-attack-button" style="width:20%;height:50%;background-color:#003b88;display:none;" onclick="attack_south()">South</div>
+                <div class="text main-content-button ad-attack-button" style="width:20%;height:50%;background-color:#003b88;display:none;" onclick="attack_west()">West</div>
+                <div class='text main-content-button' style="width:20%;height:50%" onclick='nextPage()'>Next</div>
+            </div>
           </div>
         <!--PAGE 6-->
-        <div class="main-content-box mod1-page">
-            <div class='text main-content-title'>Breaking into the castle - Defender</div>
-            <div class='text main-content-title-desc'></div>
-            <div class='text main-content-desc'>
-                <div></div>
+        <div class="main-content-box mod1-page game-info">
+            <div class='text main-content-title game-title'>Breaking into the castle - Defender</div>
+            <div class='text main-content-desc game-side-info'>Yes YO</div>
+            <div class="game">
+                <div class="inside-box" id="Box1">
+                    <div class="inside-box" id="Box2">
+                        <div class="inside-box" style="background-color:yellow;" id="Box3">
+                        </div>
+                    </div>
+                </div>
             </div>
-            <br>
-            <div class='text main-content-button' onclick='nextPage()'>Finish</div>
-            <br>
-            <br>
+            <div class='text main-content-button game-next' style="width:20%;"  onclick='nextPage()'>Next</div>
+            
           </div>
         <!--PAGE 7-->
         <div class="main-content-box mod1-page">
@@ -110,7 +138,7 @@
                 <div></div>
             </div>
             <br>
-            <div class='text main-content-button'>Next</div>
+            <div class='text main-content-button' onclick="back_to_main()">Finish</div>
             <br>
             <br>
           </div>
@@ -118,4 +146,5 @@
     </div>
     <div class="main-footer">
     </div>
-  </body>
+</body>
+</html>

@@ -56,7 +56,6 @@ html, body {
     box-sizing: border-box;
     border: 1px solid #2f2f2f;
     border-radius: 10px;
-    align-items: center;
     background-color: #7f7f7f;
 }
 
@@ -90,8 +89,57 @@ html, body {
     font-size: 30px;
     color: white;
     border-radius: 10px;
-    align-self: center;
     background-color:#06c506;
+}
+
+.game-info {
+    position: relative;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: [game-col] 6fr [side-info] 1fr;
+    grid-template-rows: [top-info] 1fr [game-row] 6fr [footer] 1fr;
+    grid-template-areas:
+      "top-info top-info"
+      "game side-info"
+      "next next"
+}
+
+.game-title {
+    position: relative;
+    grid-area: top-info;
+}
+
+.game {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    grid-area: game;
+}
+
+.game-side-info {
+    position: relative;
+    grid-area: side-info;
+}
+
+.game-next {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    grid-area: next;
+}
+
+.inside-box {
+    display: flex;
+    box-sizing: border-box;
+    align-content: center;
+    align-self: center;
+    text-align: center;
+    justify-content: center;
+    width: 70%;
+    height: 70%;
+    border: 2px solid white;
 }
 
 .main-content-progress {
