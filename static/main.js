@@ -5,15 +5,18 @@ var attack_defend = {
         {'north': 0,
         'east': 0,
         'south': 0,
-        'west': 0},
+        'west': 0,
+        'edited': false},
         {'north': 0,
         'east': 0,
         'south': 0,
-        'west': 0},
+        'west': 0,
+        'edited': false},
         {'north': 0,
         'east': 0,
         'south': 0,
-        'west': 0}
+        'west': 0,
+        'edited': false}
     ],
     'brickBank': 300,
     'timeSurvived': 0,
@@ -23,6 +26,8 @@ var attack_defend = {
 
 const ad_position_ref = ['North', 'East', 'South', 'West']
 const box_position_ref = ['top', 'right', 'bottom', 'left']
+const defence_position_ref = ['West', 'North', 'South', 'East']
+const defence_box_position_ref = ['left', 'top', 'bottom', 'right']
 
 function updateProgress() {
     progressBars = document.getElementsByClassName('main-content-progress')
@@ -100,6 +105,26 @@ function nextPage() {
             break
         }
 
+    }
+    attack_defend = {
+        'walls': [
+            {'north': 0,
+            'east': 0,
+            'south': 0,
+            'west': 0},
+            {'north': 0,
+            'east': 0,
+            'south': 0,
+            'west': 0},
+            {'north': 0,
+            'east': 0,
+            'south': 0,
+            'west': 0}
+        ],
+        'brickBank': 300,
+        'timeSurvived': 0,
+        'timeToEnter': 0,
+        'optimumTimeToEnter': 0
     }
     
 }
@@ -268,7 +293,106 @@ function give_status(num) {
 
 // DEFEND 
 function start_defence() {
+    for (i = 2; i >= 0; i--) {
+        box = document.getElementById("dBox" + i);
+        min = 300;
+        minIndex = ""
+        for (j = 0; j < 4; j++) {
+            size = box.style['border-' + defence_box_position_ref[j] + '-width']
+            num = parseInt(size.replace("px", ""))
+            if (num < min) {
+                min = num;
+                minIndex = defence_box_position_ref[j]
+            }
+        }
+        attack_defend.timeSurvived += min
+        box.style["border-" + minIndex + "-width"] = "0px" 
+    }
+    document.getElementById('survival-result').innerHTML = "Time taken: " + attack_defend.timeSurvived
+    if (attack_defend.timeSurvived < 75) {
+        document.getElementById('attempt-status').innerHTML = "You could still do better!"
+    } else {
+        document.getElementById('attempt-status').innerHTML = "Awesome! The bot couldn't possibly break in a faster way!"
+    }
+}
+function set_layer() {
+    input = document.getElementsByClassName('defence-input')
+    for (i = 0; i < input.length; i++) {
+        if (input[i].value == "") {
+            input[i].value = 0
+        }
+    }
+    for (i = 0; i < 3; i++) {
+        if (attack_defend['walls'][i]['edited'] == true) {
+            continue
+        }
+        walls = attack_defend['walls'][i];
+        box = document.getElementById("dBox" + i);
+        tempTotal = 0;
+        for (j = 0; j < 4; j++) {
+            tempTotal += parseInt(input[j].value)
+        }
+        if (tempTotal > attack_defend.brickBank) {
+            alert("You don't have enough bricks!")
+            return;
+        }
+        for (j = 0; j < defence_position_ref.length; j++) {
+            walls[defence_position_ref[j]] = parseInt(input[j].value)
+            attack_defend.brickBank -= parseInt(input[j].value);
+            box.style['border-' + defence_box_position_ref[j] + '-width'] = input[j].value + "px"
+            input[j].value = ""
+        }
+        document.getElementById('brickBank').innerHTML = "Bricks: " + attack_defend.brickBank
+
+        walls['edited'] = true;
+        attack_defend['walls'][i] = walls;
+        if (i < 2) {
+            return;
+        }
+    }
+    buttons = document.getElementsByClassName('defence-input')
+    for (i = 0; i < buttons.length; i++) {
+        buttons[i].style.display = "none"
+    }
+    document.getElementById("begin-defence-btn").style.display = "flex"
     
+}
+function restart_defence() {
+    document.getElementById('survival-result').innerHTML = ""
+    document.getElementById('attempt-status').innerHTML = ""
+    attack_defend = {
+        'walls': [
+            {'north': 0,
+            'east': 0,
+            'south': 0,
+            'west': 0,
+            'edited': false},
+            {'north': 0,
+            'east': 0,
+            'south': 0,
+            'west': 0,
+            'edited': false},
+            {'north': 0,
+            'east': 0,
+            'south': 0,
+            'west': 0,
+            'edited': false}
+        ],
+        'brickBank': 300,
+        'timeSurvived': 0,
+        'timeToEnter': 0,
+        'optimumTimeToEnter': 0
+    }
+    for (i = 0; i < 3; i++) {
+        box = document.getElementById("dBox" + i);
+        box.style['border-width'] = "2px"
+    }
+    document.getElementById('brickBank').innerHTML = "Bricks: 300"
+    buttons = document.getElementsByClassName("defence-input")
+    for (i = 0; i < buttons.length; i++) {
+        buttons[i].style.display = "flex"
+    }
+    document.getElementById('begin-defence-btn').style.display = "none"
 }
 
 // END GAME MODULE 1 //
@@ -290,3 +414,25 @@ function back_to_main() {
             }) 
     window.location = "http://localhost:" + BACKEND_PORT
 }
+
+// HELPER FUNCTIONS
+
+/* validates input to ensure it's a number */
+/* Taken from https://stackoverflow.com/questions/469357/html-text-input-allow-only-numeric-input */
+function validateAsNum(evt) {
+    var theEvent = evt || window.event;
+  
+    // Handle paste
+    if (theEvent.type === 'paste') {
+        key = event.clipboardData.getData('text/plain');
+    } else {
+    // Handle key press
+        var key = theEvent.keyCode || theEvent.which;
+        key = String.fromCharCode(key);
+    }
+    var regex = /[0-9]|\./;
+    if( !regex.test(key) ) {
+      theEvent.returnValue = false;
+      if(theEvent.preventDefault) theEvent.preventDefault();
+    }
+  }

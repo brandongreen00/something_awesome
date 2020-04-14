@@ -168,16 +168,36 @@
         <!--PAGE 6-->
         <div class="main-content-box mod1-page game-info">
             <div class='text main-content-title game-title'>Breaking into the castle - Defender</div>
-            <div class='text main-content-desc game-side-info'>Yes YO</div>
+            <div class='text main-content-desc game-side-info' style="font-size:15px;">
+                <div>Now you're a defender! Ooooh!</div>
+                <div>You have 300 bricks to set. Keep in mind you need to split this between THREE layers of walls!</div>
+                <div>Put in a certain amount for each wall (N, E, S, W), then click "Set Layer" to go to the next layer.</div>
+                <div>Once you're done, you can start your defence. A bot will try and break through your wall!</div>
+                <br>
+                <div id="brickBank">Bricks: 300</div>
+                <div class="text main-content-button" id="set-layer-btn" onclick="set_layer()">Set layer</div>
+                <div class="text main-content-button" id="restart-defence-btn" onclick="restart_defence()">Restart</div>
+                <div id="survival-result"></div>
+                <div id="attempt-status"></div>
+            </div>
             <div class="game">
-                <div class="inside-box" id="Box1">
-                    <div class="inside-box" id="Box2">
-                        <div class="inside-box" style="background-color:yellow;" id="Box3">
+                <div class="inside-box" id="dBox2">
+                    <div class="inside-box" id="dBox1">
+                        <div class="inside-box" style="background-color:yellow;" id="dBox0">
+                            Goal
                         </div>
                     </div>
                 </div>
             </div>
-            <div class='text main-content-button game-next' style="width:20%;"  onclick='nextPage()'>Next</div>
+            <div class='game-next'>
+                <input class="text main-content-button defence-input" style="width:20%;height:50%;background-color:#003b88;display:flex;" placeholder="West" onkeypress="validateAsNum(event)" onclick="attack_west()"></input>
+                <input class="text main-content-button defence-input" style="width:20%;height:50%;background-color:#003b88;display:flex;" placeholder="North" onkeypress="validateAsNum(event)" onclick="attack_north()"></input>
+                <input class="text main-content-button defence-input" style="width:20%;height:50%;background-color:#003b88;display:flex;" placeholder="South" onkeypress="validateAsNum(event)" onclick="attack_south()"></input>
+                <input class="text main-content-button defence-input" style="width:20%;height:50%;background-color:#003b88;display:flex;" placeholder="East" onkeypress="validateAsNum(event)" onclick="attack_east()"></input>
+                <div class="text main-content-button" id="begin-defence-btn" style="width:80%;height:50%;background-color:#003b88;display:none;" onclick="start_defence()">Begin Defence</div>
+                <div class='text main-content-button' style="width:20%;height:50%" onclick='nextPage()'>Next</div>
+            </div>
+            
             
           </div>
         <!--PAGE 7-->
