@@ -17,7 +17,8 @@ var attack_defend = {
     ],
     'brickBank': 300,
     'timeSurvived': 0,
-    'timeToEnter': 0
+    'timeToEnter': 0,
+    'optimumTimeToEnter': 0
 }
 
 const ad_position_ref = ['North', 'East', 'South', 'West']
@@ -108,22 +109,35 @@ function nextPage() {
 // ATTACK 
 function start_attack() {
     attack_defend.timeToEnter = 0;
+    attack_defend.optimumTimeToEnter = 0;
     for (i = 2; i >= 0; i--) {
         walls = attack_defend['walls'][i];
         wallStatus = document.getElementsByClassName("wall-status")
         box = document.getElementById("Box" + i)
         brickBank = 50;
         j = 0;
+        min = 50
         for (element in walls) {
             result = Math.floor(Math.random() * Math.floor(brickBank)) + 1
+            if (result < min) {
+                min = result
+            }
             walls[element] = result;
             box.style['border-' + box_position_ref[j] + '-width'] = result + "px"
             if (i == 2) {
-                wallStatus[j].innerHTML = ad_position_ref[j] + ": " + result
+                wallStatus[j].innerHTML = ad_position_ref[j].charAt(0) + ": " + give_status(result)
             }
             j++;
         }
+        document.getElementById('time-taken').innerHTML = "Time Taken: 0 s"
         attack_defend['walls'][i] = walls
+        attack_defend.optimumTimeToEnter += min;
+    }
+    start_attack_btn = document.getElementById('start-attack-btn')
+    if (start_attack_btn.innerHTML == 'Restart!') {
+        document.getElementById("optimum-time-taken").innerHTML = "Target Time: " + attack_defend['optimumTimeToEnter'] + 's';
+    } else {
+        start_attack_btn.innerHTML = 'Restart!'
     }
     buttonList = document.getElementsByClassName('ad-attack-button')
     for (i = 0; i < buttonList.length; i++) {
@@ -230,22 +244,41 @@ function end_attack(wallCount) {
         for (i = 0; i < attack_buttons.length; i++) {
             attack_buttons[i].style.display = "none"
         }
+        document.getElementById('optimum-time-taken').innerHTML = 'Target time: ' + attack_defend['optimumTimeToEnter'] + ' s';
     } else {
         nextWall = attack_defend['walls'][i - 1]
     }
     for (j = 0; j < wallStatus.length; j++) {
         if (editMessage == true) {
-            wallStatus[j].innerHTML = ad_position_ref[j] + ": " + nextWall[ad_position_ref[j].toLowerCase()]
+            wallStatus[j].innerHTML = ad_position_ref[j].charAt(0) + ": " + give_status(nextWall[ad_position_ref[j].toLowerCase()])
         } else {
             wallStatus[j].innerHTML = message
         }
     }
 }
+function give_status(num) {
+    if (num >= 35) {
+        return "Strong"
+    } else if (20 <= num && num < 35) {
+        return "Medium"
+    } else {
+        return "Weak"
+    }
+}
 
 // DEFEND 
-
+function start_defence() {
+    
+}
 
 // END GAME MODULE 1 //
+
+// START GAME MODULE 2 //
+
+
+// END GAME MODULE 2 //
+
+// BACK TO MAIN
 function back_to_main() {
     url = window.location.toString()
     mod = ""

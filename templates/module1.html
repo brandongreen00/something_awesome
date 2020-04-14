@@ -34,8 +34,19 @@
         <div class="main-content-box mod1-page">
           <div class='text main-content-title'>Introduction</div>
           <div class='text main-content-title-desc'>So... what is security? What is this all about?</div>
+          <br>
           <div class='text main-content-desc'>
-              <div></div>
+              <div>Google defines security as "the state of being free from danger or threat". Pretty simple, right?</div>
+              <div>While the concept of security is easy to understand, the methods of achieving this 'security' is anything but.</div>
+              <br>
+              <div>You see, as technology advances, so does the proficiency of those who'd like to breach our privacy (by stealing, hacking, etc)</div>
+              <div>This means that naturally, being able to stay secure becomes more and more complex.</div>
+              <div>This module is going to cover two main topics:</div>
+              <ul>
+                  <li>How does security differ from what I see normally? (Media, in movies, etc)</li>
+                  <li>What kinds of things would a hacker / defender think of or look for?</li>
+              </ul>
+              <div>Hopefully you can learn something new from this!</div> 
           </div>
           <br>
           <div class='text main-content-button' onclick='nextPage()'>Next</div>
@@ -46,12 +57,20 @@
         <div class="main-content-box mod1-page">
             <div class='text main-content-title'>Perceptions vs Reality</div>
             <div class='text main-content-title-desc'>How much do I know about security from everyday knowledge? How wrong are the movies?</div>
+            <br>
             <div class='text main-content-desc'>
-                <div>
-                    <br>
-                    <div>Yas QUEEN</div>
-                    <br>
-                </div>
+                <div style="font-weight:bold;">RECON</div>
+                <div>Something that you most definitely do NOT see in movies is all the reconnaissance involved in breaching a system.</div>
+                <div>Unlike hackers in movies who just sit on their computer, type a few keys in and break into the pentagon, real life hackers would be doing reconnaisance first.</div>
+                <div>This involves sending Phishing emails (posing as a trusted source in order to gain information) or even something as simple as researching the company and their employees.</div>
+                <div>Recon can also take place in areas you do not expect. How much information about yourself would people find in your rubbish bin? Your eating habits? Mobile number? Medication you take?</div>
+                <br>
+                <div style="font-weight:bold;">SOCIAL ENGINEERING</div>
+                <div>Yes! Your interactions with other people can be engineered!</div>
+                <div>This involves the simple art of knowing how people work. How easily do you think you can be tricked? Not easily?</div>
+                <div>One interesting concept about society is that <strong style="color:#003b88">people see what they want to see</strong>. What are the chances that all the people working on the road are construction workers? Pretty high, right? Funny how easy it is to get a high-vis vest and a hard hat, though...</div>
+                <br>
+                <div>The world of security is much, MUCH wider than just these two concepts. There is so much about it that we don't see in our day-to-day lives! (Unless, of course, you're a security engineer. Then you'd see it a lot)</div>
             </div>
             <br>
             <div class='text main-content-button' onclick='nextPage()'>Next</div>
@@ -63,7 +82,23 @@
             <div class='text main-content-title'>What is an attacker? Defender?</div>
             <div class='text main-content-title-desc'>Of course you know the meaning of these two words... but what are these two entities looking for? What are their goals?</div>
             <div class='text main-content-desc'>
-                <div></div>
+                <div>Usually when we think about the entities involved in security (of all kinds - not just cyber!) it's common to break them down into two main groups</div>
+                <ul>
+                    <li>Attacker - Whoever is trying to breach another person's security</li>
+                    <li>Defender - The person responsible for maintaining someone's security</li>
+                </ul>
+                <div>While it's easy to actually name these kind of entities, it's important to think about their mindset. Mindset matters!</div>
+                <div>If you were an attacker, what kind of things would you be thinking of? Here are some ideas:</div>
+                <ul>
+                    <li>What are the mistakes in this security system? (Every system has flaws!)</li>
+                    <li>What kind of defences will I need to overcome?</li>
+                    <li>What is my goal? Is it worth the effort of trying to break through this secure system?</li>
+                </ul>
+                <div>Whereas the defender would most likely be thinking of different questions:</div>
+                <ul>
+                    <li>How secure is the system I've made?</li>
+                    <li>Where could a potential attacker come from? Have I missed any possibilities?</li>
+                </ul>
             </div>
             <br>
             <div class='text main-content-button' onclick='nextPage()'>Next</div>
@@ -75,7 +110,20 @@
             <div class='text main-content-title'>Breaking into the castle - Rules</div>
             <div class='text main-content-title-desc'>Here's a little game to help make things a little more clear.</div>
             <div class='text main-content-desc'>
-                <div></div>
+                <div>Yes, this game could've had a more creative title. Sue me.</div>
+                <br>
+                <div style="font-weight:bold;">ATTACKER:</div>
+                <div>Your aim is to break into the castle's 3 walls using the least amount of effort!</div>
+                <div>Once you click begin, you'll be able to see 4 blue buttons underneath to chosoe which angle to attack from. You can click the buttons THREE times in total!</div>
+                <div>You'll be able to see the thickness of the walls both on the screen in the middle, and also on the right, where the wall strength will be categorised as "Strong", "Medium" or "Weak"</div>
+                <div>You'll recieve a score in 'seconds' for how long it took down to break down the wall. Weaker wall = Less seconds taken!</div>
+                <div>You'll also be able to see the optimum amount of time you COULD have taken if you'd chosen the weakest walls at the end. You can click restart to start over.</div>
+                <br>
+                <div style="font-weight:bold;">DEFENDER:</div>
+                <div>Your aim is to create the most secure defence!</div>
+                <div>The computer is going to take on the role of an attacker, much like you did - so try to keep out the computer for as long as possible!</div>
+                <div>Think carefully about how you want to space out your walls. You have 300 'bricks' to divide between three walls, and each of their compass directions.</div> 
+                <div>Good luck!</div>
             </div>
             <br>
             <div class='text main-content-button' onclick='nextPage()'>Next</div>
@@ -91,27 +139,29 @@
                 <br>
                 <div class="text">Wall status (amount of bricks):</div>
                 <ul>
-                    <li class="text wall-status" id="north">North: </li>
-                    <li class="text wall-status" id="east">East: </li>
-                    <li class="text wall-status" id="south">South: </li>
-                    <li class="text wall-status" id="west">West: </li>
+                    <li class="text wall-status" id="north">N: </li>
+                    <li class="text wall-status" id="east">E: </li>
+                    <li class="text wall-status" id="south">S: </li>
+                    <li class="text wall-status" id="west">W: </li>
                 </ul>
-                <div class="text main-content-button" onclick="start_attack()">Begin!</div>
+                <div class="text main-content-button" id="start-attack-btn" onclick="start_attack()">Begin!</div>
                 <div class="text" id="time-taken">Time Taken: 0 s</div>
+                <div class="text" id="optimum-time-taken"></div>
             </div>
             <div class="game">
                 <div class="inside-box" id="Box2">
                     <div class="inside-box" id="Box1">
                         <div class="inside-box" style="background-color:yellow;" id="Box0">
+                            Goal
                         </div>
                     </div>
                 </div>
             </div>
             <div class=game-next>
-                <div class="text main-content-button ad-attack-button" style="width:20%;height:50%;background-color:#003b88;display:none;" onclick="attack_north()">North</div>
-                <div class="text main-content-button ad-attack-button" style="width:20%;height:50%;background-color:#003b88;display:none;" onclick="attack_east()">East</div>
-                <div class="text main-content-button ad-attack-button" style="width:20%;height:50%;background-color:#003b88;display:none;" onclick="attack_south()">South</div>
                 <div class="text main-content-button ad-attack-button" style="width:20%;height:50%;background-color:#003b88;display:none;" onclick="attack_west()">West</div>
+                <div class="text main-content-button ad-attack-button" style="width:20%;height:50%;background-color:#003b88;display:none;" onclick="attack_north()">North</div>
+                <div class="text main-content-button ad-attack-button" style="width:20%;height:50%;background-color:#003b88;display:none;" onclick="attack_south()">South</div>
+                <div class="text main-content-button ad-attack-button" style="width:20%;height:50%;background-color:#003b88;display:none;" onclick="attack_east()">East</div>
                 <div class='text main-content-button' style="width:20%;height:50%" onclick='nextPage()'>Next</div>
             </div>
           </div>
@@ -134,8 +184,20 @@
         <div class="main-content-box mod1-page">
             <div class='text main-content-title'>Conclusion</div>
             <div class='text main-content-title-desc'>Well done! You now (hopefully) have a better idea of the fundamentals of security!</div>
+            <br>
             <div class='text main-content-desc'>
-                <div></div>
+                <div>Here are some ideas that I hope the game made you think of!</div>
+                <ul>
+                    <li>As an attacker, you don't need to break down EVERY defence. You only need to find ONE weakness. Just one, and that's enough to get you inside. Quite scary!</li>
+                    <li>On the other hand, a defender can't just protect against one kind of attack. In the game, the best way to defend was to make sure every method of attack had the same quality of defence - therefore you were just as prepared for every attack!</li>
+                </ul>
+                <br>
+                <div>Just as a revision, here are the main concepts we covered.</div>
+                <ul>
+                    <li><strong>Perception vs Reality</strong>: Obviously there is a LOT more to security than we think there is. It isn't just either hacking or making a good defence! There is a lot of things that contribute to BOTH of those!</li>
+                    <li><strong>Attacker / Defender mindset</strong>: Mindset is everything in security. If you, as a defender, can't think of ways that a potential attacker will try and breach your system, you aren't really doing your job! And vice-versa with an attacker.</li>
+                </ul>
+                <div>Well done! You've reached the end of Module 1.</div>
             </div>
             <br>
             <div class='text main-content-button' onclick="back_to_main()">Finish</div>
