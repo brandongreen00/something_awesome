@@ -29,6 +29,10 @@ const box_position_ref = ['top', 'right', 'bottom', 'left']
 const defence_position_ref = ['West', 'North', 'South', 'East']
 const defence_box_position_ref = ['left', 'top', 'bottom', 'right']
 
+var roll_total = 0;
+var rolls = []
+var rolls_left = 1000;
+
 function updateProgress() {
     progressBars = document.getElementsByClassName('main-content-progress')
     fetch("http://localhost:" + BACKEND_PORT + "/getdata")
@@ -133,6 +137,7 @@ function nextPage() {
 
 // ATTACK 
 function start_attack() {
+    document.getElementById('end-attack-game').style.width = "20%"
     attack_defend.timeToEnter = 0;
     attack_defend.optimumTimeToEnter = 0;
     for (i = 2; i >= 0; i--) {
@@ -269,6 +274,7 @@ function end_attack(wallCount) {
         for (i = 0; i < attack_buttons.length; i++) {
             attack_buttons[i].style.display = "none"
         }
+        document.getElementById("end-attack-game").style.width = "100%"
         document.getElementById('optimum-time-taken').innerHTML = 'Target time: ' + attack_defend['optimumTimeToEnter'] + ' s';
     } else {
         nextWall = attack_defend['walls'][i - 1]
@@ -397,8 +403,73 @@ function restart_defence() {
 
 // END GAME MODULE 1 //
 
-// START GAME MODULE 2 //
 
+// START GAME MODULE 2 //
+function begin_rolls(risk) {
+    input = document.getElementById('roll-input')
+    if (input.value == "") {
+        input.value = 1
+    }
+    currentTotal = 0;
+    cost = (1000 - risk) * 50 * parseInt(input.value)
+    if (cost > roll_total) {
+        alert("You don't have these amount of points to spend!\nCost: " + cost + "\n(Remember that you're charged per INDIVIDUAL ROLL)")
+        return;
+    }
+    if (parseInt(input.value) > rolls_left) {
+        alert("You don't have these many rolls left! Pick a better number")
+        return;
+    }
+    roll_total -= cost;
+    for (i = 0; i < parseInt(input.value); i++) {
+        result = Math.floor(Math.random() * Math.floor(risk)) + 1;
+        rolls.push(result)
+        rolls_left--;
+        if (result <= 990) {
+            roll_total += result
+            currentTotal += result
+        } else {
+            roll_total = null
+            currentTotal = 0
+            break
+        }
+    }
+    if (roll_total == null) {
+        document.getElementById("num-rolls-display").innerHTML = "OOPS!"
+        document.getElementById("point-display").innerHTML = "YOU BLEW IT."
+        document.getElementById("numRolled").innerHTML = "Extra bills caused jam! Extra: $" + (result - 990);
+
+        buttons = document.getElementsByClassName('roll-button')
+        for (i = 0; i < buttons.length; i++) {
+            buttons[i].style.display = "none"
+        }
+
+        return
+    }
+    document.getElementById("num-rolls-display").innerHTML = "Hours left: " + rolls_left
+    document.getElementById("point-display").innerHTML = "Dollars: $" + roll_total
+    document.getElementById("numRolled").innerHTML = "Gained: $" + currentTotal
+    if (rolls_left == 0) {
+        buttons = document.getElementsByClassName('roll-button')
+        for (i = 0; i < buttons.length; i++) {
+            buttons[i].style.display = "none"
+        }
+        document.getElementById('well-done').innerHTML = "WELL DONE!"
+    }
+}
+function reset_roll() {
+    roll_total = 0;
+    rolls = []
+    rolls_left = 1000;
+    document.getElementById('well-done').innerHTML = ""
+    document.getElementById("num-rolls-display").innerHTML = "Rolls left: 1000"
+    document.getElementById("point-display").innerHTML = "Dollars: $0"
+    document.getElementById("numRolled").innerHTML = ""
+    buttons = document.getElementsByClassName('roll-button')
+        for (i = 0; i < buttons.length; i++) {
+            buttons[i].style.display = "flex"
+        }
+}
 
 // END GAME MODULE 2 //
 

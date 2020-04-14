@@ -162,7 +162,7 @@
                 <div class="text main-content-button ad-attack-button" style="width:20%;height:50%;background-color:#003b88;display:none;" onclick="attack_north()">North</div>
                 <div class="text main-content-button ad-attack-button" style="width:20%;height:50%;background-color:#003b88;display:none;" onclick="attack_south()">South</div>
                 <div class="text main-content-button ad-attack-button" style="width:20%;height:50%;background-color:#003b88;display:none;" onclick="attack_east()">East</div>
-                <div class='text main-content-button' style="width:20%;height:50%" onclick='nextPage()'>Next</div>
+                <div class='text main-content-button' id="end-attack-game" style="width:20%;height:50%" onclick='nextPage()'>Next</div>
             </div>
           </div>
         <!--PAGE 6-->
@@ -190,10 +190,10 @@
                 </div>
             </div>
             <div class='game-next'>
-                <input class="text main-content-button defence-input" style="width:20%;height:50%;background-color:#003b88;display:flex;" placeholder="West" onkeypress="validateAsNum(event)" onclick="attack_west()"></input>
-                <input class="text main-content-button defence-input" style="width:20%;height:50%;background-color:#003b88;display:flex;" placeholder="North" onkeypress="validateAsNum(event)" onclick="attack_north()"></input>
-                <input class="text main-content-button defence-input" style="width:20%;height:50%;background-color:#003b88;display:flex;" placeholder="South" onkeypress="validateAsNum(event)" onclick="attack_south()"></input>
-                <input class="text main-content-button defence-input" style="width:20%;height:50%;background-color:#003b88;display:flex;" placeholder="East" onkeypress="validateAsNum(event)" onclick="attack_east()"></input>
+                <input class="text main-content-button defence-input" style="width:20%;height:50%;background-color:#003b88;display:flex;" placeholder="West" onkeypress="validateAsNum(event)"></input>
+                <input class="text main-content-button defence-input" style="width:20%;height:50%;background-color:#003b88;display:flex;" placeholder="North" onkeypress="validateAsNum(event)"></input>
+                <input class="text main-content-button defence-input" style="width:20%;height:50%;background-color:#003b88;display:flex;" placeholder="South" onkeypress="validateAsNum(event)"></input>
+                <input class="text main-content-button defence-input" style="width:20%;height:50%;background-color:#003b88;display:flex;" placeholder="East" onkeypress="validateAsNum(event)"></input>
                 <div class="text main-content-button" id="begin-defence-btn" style="width:80%;height:50%;background-color:#003b88;display:none;" onclick="start_defence()">Begin Defence</div>
                 <div class='text main-content-button' style="width:20%;height:50%" onclick='nextPage()'>Next</div>
             </div>

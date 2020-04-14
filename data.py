@@ -5,7 +5,7 @@ progress = {
         'pageEnd': 7},
         {'completed': False,
         'pageNum': 0,
-        'pageEnd': 7},
+        'pageEnd': 6},
         {'completed': False,
         'pageNum': 0,
         'pageEnd': 7}

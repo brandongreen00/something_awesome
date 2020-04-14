@@ -17,15 +17,13 @@
                 <br>
                 <li id='2'>Defending against the inside</li>
                 <br>
-                <li id='3'>Why do we need to?</li>
+                <li id='3'>Assessing risks</li>
                 <br>
-                <li id='4'>Assessing risks</li>
+                <li id='4'>Definitely not a gambling game - Rules</li>
                 <br>
-                <li id='5'>Definitely not a gambling game - Rules</li>
+                <li id='5'>Definitely not a gambling game</li>
                 <br>
-                <li id='6'>Definitely not a gambling game</li>
-                <br>
-                <li id='7'>Conclusion</li>
+                <li id='6'>Conclusion</li>
             </ul>
         </div>
       </div>
@@ -34,8 +32,19 @@
         <div class="main-content-box mod2-page">
           <div class='text main-content-title'>Introduction</div>
           <div class='text main-content-title-desc'>As people, it's natural to make mistakes. How does this affect the security world?</div>
+          <br>
           <div class='text main-content-desc'>
-              <div></div>
+              <div>Given how you've shown enough interest to click on <strong style="color:#003b88">Module 2</strong>, I'll assume you might be interested in something in the security field!</div>
+              <div>It is a pretty cool thing, so from now on, I'll be referring to the kind of approaches a <strong style="color:#003b88">security engineer</strong> would use.</div>
+              <br>
+              <div>It's important for us to realise we live in a world of flaws. As a result of this, there are flaws in security systems.</div>
+              <div>There are many different kinds of flaws! The obvious one that you'd think of is that there might be a small error in the security system - a security guard falls asleep, there is a weakness in code that someone wrote, etc.</div>
+              <div>However, there are some flaws you might not think about on a first glance:</div>
+              <ul>
+                <li>Security might be compromised by an insider - someone you don't expect</li>
+                <li>There might be a low probability / high risk event that might actually occur and people aren't ready for it</li>
+              </ul>
+              <div>These are the topics that we're going to cover in this module. How fun!</div>
           </div>
           <br>
           <div class='text main-content-button' onclick='nextPage()'>Next</div>
@@ -47,7 +56,19 @@
             <div class='text main-content-title'>Defending against the inside</div>
             <div class='text main-content-title-desc'>People can have GREAT security against hackers. But what if someone freely gives them information?</div>
             <div class='text main-content-desc'>
-                <div></div>
+                <div>With every defense, it's quite important to consider threats from the inside. These threats usually come from people - we'll call them "insiders" from the purpose of this page</div>
+                <div>Insiders have many reasons to compromise security from the inside (whether this could be leaking designs, whistleblowing, etc)</div>
+                <div>Some reasons to consider are below:</div>
+                <ul>
+                  <li><strong style="color:#003b88">Monetary gain</strong>: there could be a reward for certain information</li>
+                  <li><strong style="color:#003b88">Moral dilemma</strong>: Maybe the insider feels it's their responsibility to leak information. (whistleblowers)</li>
+                  <li><strong style="color:#003b88">Double purpose</strong>: It's possible that the insider has never been on the side of the organisation they're working for, and had the intent to leak information from the start!</li>
+                </ul>
+                <div>At the end of the day, all of this can be summarised in the term <strong style="color:#003b88">conflict of interest</strong>. The interest of the individual does not align with the interest of the majority.</div>
+                <div>Defending against these kind of attacks can be quite hard - as preventative measures might actually affect more than just potential attackers - they could affect everyone else in the system! And if the 'insider' happened to be a more trusted employee, finding those kind of people before the time of the leak can be near impossible.</div> 
+                <br>
+                <div>The best thing a security engineer can do is to acknowledge all possible sources of attacks. If you only focused on defending against external attacks, you'd be more vulnerable to the internal, and vice versa.</div>
+                <div>At least acknowledgement of these issues can help to find some sort of middle ground, where steps are taken to address all of these potential issues, at least.</div>
             </div>
             <br>
             <div class='text main-content-button' onclick='nextPage()'>Next</div>
@@ -56,10 +77,25 @@
           </div>
         <!--PAGE 3-->
         <div class="main-content-box mod2-page">
-            <div class='text main-content-title'>Why do we need to?</div>
-            <div class='text main-content-title-desc'>Why do insiders do what they do? What are their possible motivations?</div>
+            <div class='text main-content-title'>Assessing Risks</div>
+            <div class='text main-content-title-desc'>We need to always be able to assess risks, to decide how well to prepare against them.</div>
+            <br>
             <div class='text main-content-desc'>
-                <div></div>
+                <div>Discussing the types of risks would be pointless, as there are a countless amount of risks, but assessing risks is one of the most important thing a security engineer can do.</div>
+                <div>Naturally, there is no way to have enough time / effort / manpower to account for every single risk imaginable, but by assessing risks correctly, a security engineer can find the most pressing risk prepare for.</div>
+                <br>
+                <div>This begs the question: <strong style="color:#003b88">What kind of risks does a security engineer need to prepare for?</strong></div>
+                <div>Though there are countless types of risks, we can categorise them into four different categories</div>
+                <ul>
+                  <li>Low probability & low impact events: <strong style="color:yellow">Not really acknowledged, but ramifications are negligable</strong></li>
+                  <li>High probability & low impact events: <strong style="color:greenyellow">Usually acknowledged and prepared for!</strong></li>
+                  <li>Low probability & high impact events: <strong style="color:darkred">Not really acknowledged, but ramifications are SEVERE</strong></li>
+                  <li>High probability & high impact events: <strong style="color:greenyellow">Usually acknowledged and prepared for!</strong></li>
+                </ul>
+                <div>As can be seen, the high probability risks are normally the ones that engineers are the most aware of - but it's especially the low probability and high impact events that can be most dangerous.</div>
+                <div>Paired with the fact that people aren't prepared for it, the ramifications can be quite severe indeed!</div>
+                <br>
+                <div>Here is a small scenario involving a low probability / high impact risk.</div>
             </div>
             <br>
             <div class='text main-content-button' onclick='nextPage()'>Next</div>
@@ -68,10 +104,27 @@
           </div>
         <!--PAGE 4-->
         <div class="main-content-box mod2-page">
-            <div class='text main-content-title'>Assessing Risks</div>
-            <div class='text main-content-title-desc'>We need to always be able to assess risks, to decide how well to prepare against them.</div>
+            <div class='text main-content-title'>A Mint Print - Rules</div>
+            <div class='text main-content-title-desc'>This is a game of risk assessment... ooh!</div>
+            <br>
             <div class='text main-content-desc'>
-                <div></div>
+                <div><strong>THE SCENARIO:</strong></div>
+                <div>You're the manager the Royal Australian Mint. Head office has told you that the normal machine to print bills has broken! Oh no!</div>
+                <div>Thankfully, you still have the old machine. The only problem is: the old machine has a <strong style="color:darkred">1% failure rate.</strong> And when I mean failure, I mean serious jams that destroy the machine. I mean compromising the financial security of Australia.</div>
+                <br>
+                <div>No biggie, right? Right.</div>
+                <br>
+                <div>Thankfully, you can have your best workers operating the machine. This would reduce the risk of explosion and catastophic failure! Goody!</div>
+                <div>But these workers know how valuable they are, (Smart people) and will charge extra depending on how many there are.</div>
+                <div>They know that <strong style="color:#003b88">the machine shouldn't print more than 990 bills per hour</strong>, or it'll jam. They can fine tune it to keep the numbers down.</div>
+                <br>
+                <div>Head office still wants you to be as productive as possible - the new machine will arrive in <strong style="color:#003b88">1000</strong> hours. Good luck!</div>
+                <ul>
+                  <li>Reducing the risk to <strong style="color:#003b88">0.8%</strong> will cost you <strong style="color:#003b88">100</strong> dollars per hour.</li>
+                  <li>Reducing the risk to <strong style="color:#003b88">0.5%</strong> will cost you <strong style="color:#003b88">250</strong> dollars per hour.</li>
+                  <li>Reducing the risk to <strong style="color:#003b88">0.2%</strong> will cost you <strong style="color:#003b88">400</strong> dollars per hour.</li>
+                  <li>Reducing the risk to <strong style="color:#003b88">0%</strong> will cost you <strong style="color:#003b88">500</strong> dollars per hour.</li>
+                </ul>
             </div>
             <br>
             <div class='text main-content-button' onclick='nextPage()'>Next</div>
@@ -79,35 +132,53 @@
             <br>
           </div>
         <!--PAGE 5-->
-        <div class="main-content-box mod2-page">
-            <div class='text main-content-title'>Definitely not a gambling game - Rules</div>
-            <div class='text main-content-title-desc'></div>
-            <div class='text main-content-desc'>
-                <div></div>
-            </div>
-            <br>
-            <div class='text main-content-button' onclick='nextPage()'>Next</div>
-            <br>
-            <br>
+        <div class="main-content-box mod2-page game-info">
+          <div class='text main-content-title game-title'>A Mint Print</div>
+          <div class='text main-content-desc game-side-info'>
+              <div>COSTS TO MITIGATE RISK:</div>
+              <ul>
+                <li>8% risk: $100</li>
+                <li>5% risk: $250</li>
+                <li>2% risk: $400</li>
+                <li>0% risk: $500</li>
+              </ul>
+              <div id="num-rolls-display">Hours left: 1000</div>
+              <div id="point-display">Dollars: $0</div>
+              <div id="numRolled" style="color:#003b88"></div>
+              <div class="text main-content-button roll-button" style="background-color:#003b88;" onclick="begin_rolls(1000)">1% Risk</div>
+              <div class="text main-content-button" id="reset-btn" onclick="reset_roll()">Reset</div>
+              <div id="well-done" style="font-size:30pt"></div> 
           </div>
+          <div class="game">
+            <input class="text main-content-button" id="roll-input" style="width:100%;height:100%;background-color:#003b88;display:flex;font-size:120px" placeholder="Number of Hours" onkeypress="validateAsNum(event)"></input>
+          </div>
+          <div class='game-next'>
+            <div class="text main-content-button roll-button" style="width:20%;height:50%;background-color:#003b88;display:flex;" onclick="begin_rolls(998)">0.8% Risk</div>
+            <div class="text main-content-button roll-button" style="width:20%;height:50%;background-color:#003b88;display:flex;" onclick="begin_rolls(995)">0.5% Risk</div>
+            <div class="text main-content-button roll-button" style="width:20%;height:50%;background-color:#003b88;display:flex;" onclick="begin_rolls(992)">0.2% Risk</div>
+            <div class="text main-content-button roll-button" style="width:20%;height:50%;background-color:#003b88;display:flex;" onclick="begin_rolls(990)">0% Risk</div>
+            <div class='text main-content-button' style="width:20%;height:50%" onclick='nextPage()'>Next</div>
+          </div>
+        </div>
         <!--PAGE 6-->
-        <div class="main-content-box mod2-page">
-            <div class='text main-content-title'>Definitely not a gambling game</div>
-            <div class='text main-content-title-desc'></div>
-            <div class='text main-content-desc'>
-                <div></div>
-            </div>
-            <br>
-            <div class='text main-content-button' onclick='nextPage()'>Next</div>
-            <br>
-            <br>
-          </div>
-        <!--PAGE 7-->
         <div class="main-content-box mod2-page">
             <div class='text main-content-title'>Conclusion</div>
             <div class='text main-content-title-desc'>Well done! You now (hopefully) have a better idea of the fundamentals of security!</div>
+            <br>
             <div class='text main-content-desc'>
-                <div></div>
+                <div>Well done! Hopefully you actually managed to get to the end of that activity.</div>
+                <div>The idea behind that game is that sometimes, the existences of risks are necessary to productivity. If you focus all of your effort on eliminating risks, other things could suffer.</div>
+                <div>But in the same way, if you focused purely on profit, a measely 1% risk can become quite dangerous indeed!</div>
+                <br>
+                <div><strong>DEBRIEF:</strong></div>
+                <div>In this module, we learned about the following:</div>
+                <ul>
+                  <li>Insiders and their ability to compromise a secure system</li>
+                  <li>Risks and how they need to be managed</li>
+                </ul>
+                <div>It's important to realise that with BOTH of these issues, a middle ground needs to be found. There is no one hard and fast solution to these concepts, but they do need to be considered as a security engineer!</div>
+                <br>
+                <div>Well done! You've completed Module 2.</div> 
             </div>
             <br>
             <div class='text main-content-button' onclick="back_to_main()">Finish</div>
